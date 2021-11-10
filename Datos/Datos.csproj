@@ -64,6 +64,7 @@
     <Compile Include="ClsDatos_Persona.cs" />
     <Compile Include="ClsDatos_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prueba.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
