@@ -108,6 +108,67 @@ namespace Datos
                 return "error";
             }
             finally { conex.conectar.Close(); }
+
+
+        }
+
+        public int EStado_Usuario(String cedu)
+        {
+            clsDatosMetodosGlobales actualizar = new clsDatosMetodosGlobales();
+            
+            String i = "UPDATE usuarios SET id_estado_usuario=1 WHERE cedula='"+  cedu + "';";
+            DataTable tabla = new DataTable();
+            tabla = actualizar.bd_Consulta(i);
+
+            return 13;
+        }
+
+        public int EStado_Finalizado(String cedu)
+        {
+            clsDatosMetodosGlobales actualizar = new clsDatosMetodosGlobales();
+
+            String i = "UPDATE usuarios SET id_estado_usuario=2 WHERE cedula='" + cedu + "';";
+            DataTable tabla = new DataTable();
+            tabla = actualizar.bd_Consulta(i);
+
+            return 13;
+        }
+
+        public int VerificarUsuario(String Alias)
+        {
+            String sql = "SELECT id_estado_usuario FROM usuarios WHERE cedula= '" + Alias + "'";
+            int Vali = 0;
+            String aver;
+            try
+            {
+                conex.conectar.Open();
+                MySqlCommand CM = new MySqlCommand(sql, conex.conectar);
+                MySqlDataReader DR = CM.ExecuteReader();
+                if (DR.Read())
+                {
+                    aver = DR["id_estado_usuario"].ToString();
+                    Vali = Convert.ToInt32(aver);
+                }
+                else { aver = "se salio del sentencia sql"; }
+
+
+
+
+                return Vali;
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                // MessageBox.Show(e.ToString());
+                aver = "0";
+                return 0;
+            }
+            finally
+            {
+                conex.conectar.Close();
+            }
+
+
         }
     }
 }

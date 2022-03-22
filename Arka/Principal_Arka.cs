@@ -67,6 +67,8 @@ namespace Arka
 
             if (resultado == DialogResult.Yes)
             {
+                ClsLogica_Usuario Finalizar = new ClsLogica_Usuario();
+                Finalizar.Cambiar_Estado_Finalizado(Pcedula);
                 //Application.Exit();
                 this.Close();
             }

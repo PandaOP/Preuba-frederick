@@ -30,7 +30,6 @@ namespace Arka
         private void InitializeComponent()
         {
             this.Base = new System.Windows.Forms.Panel();
-            this.Panel_Citas = new Guna.UI2.WinForms.Guna2Panel();
             this.Bnt_Editar_Mascota = new Guna.UI2.WinForms.Guna2Button();
             this.Pic_Patita = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Lbl_Id_Cita = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@ namespace Arka
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DGVTablaCita = new System.Windows.Forms.DataGridView();
+            this.Panel_Citas = new Guna.UI2.WinForms.Guna2Panel();
             this.Btn_regresar = new Guna.UI2.WinForms.Guna2Button();
             this.Base.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Patita)).BeginInit();
@@ -67,16 +67,6 @@ namespace Arka
             this.Base.Name = "Base";
             this.Base.Size = new System.Drawing.Size(950, 557);
             this.Base.TabIndex = 1;
-            // 
-            // Panel_Citas
-            // 
-            this.Panel_Citas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Citas.Location = new System.Drawing.Point(0, 0);
-            this.Panel_Citas.Name = "Panel_Citas";
-            this.Panel_Citas.ShadowDecoration.Parent = this.Panel_Citas;
-            this.Panel_Citas.Size = new System.Drawing.Size(950, 557);
-            this.Panel_Citas.TabIndex = 24;
-            this.Panel_Citas.Visible = false;
             // 
             // Bnt_Editar_Mascota
             // 
@@ -237,6 +227,15 @@ namespace Arka
             this.DGVTablaCita.Size = new System.Drawing.Size(702, 330);
             this.DGVTablaCita.TabIndex = 0;
             this.DGVTablaCita.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVTablaCita_CellClick);
+            // 
+            // Panel_Citas
+            // 
+            this.Panel_Citas.Location = new System.Drawing.Point(0, 237);
+            this.Panel_Citas.Name = "Panel_Citas";
+            this.Panel_Citas.ShadowDecoration.Parent = this.Panel_Citas;
+            this.Panel_Citas.Size = new System.Drawing.Size(263, 320);
+            this.Panel_Citas.TabIndex = 24;
+            this.Panel_Citas.Visible = false;
             // 
             // Btn_regresar
             // 

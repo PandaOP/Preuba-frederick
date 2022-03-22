@@ -51,6 +51,7 @@
     <Compile Include="clsDatosConexion.cs" />
     <Compile Include="clsDatosDepartamento.cs" />
     <Compile Include="ClsDatosEdicionMascota.cs" />
+    <Compile Include="ClsDatosEdicionPersona.cs" />
     <Compile Include="clsDatosMedicamento.cs" />
     <Compile Include="clsDatosMetodosGlobales.cs" />
     <Compile Include="clsDatosTipo_Animales.cs" />

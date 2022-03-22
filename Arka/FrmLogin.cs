@@ -73,7 +73,9 @@ namespace Arka
         {
             if (verificar())
             {
-                Loguear();
+                
+                verificar_actualizar_estado();
+                
             }
             else
             {
@@ -81,13 +83,15 @@ namespace Arka
             }
             
         }
-
+        String resp, cedula;
         void Loguear()
         {
-            String resp, cedula;
+           
             ClsLogica_Usuario loguear = new ClsLogica_Usuario();
             resp = loguear.Loguear_Usuario(TxtUsuario.Text, TxtContrasena.Text);
             cedula = loguear.capturarcedula(TxtUsuario.Text, TxtContrasena.Text);
+          
+            loguear.Cambiar_Estado_usuario(cedula);
 
             if (resp == "Usuario O Contraseña Incorrecta")
             {
@@ -105,6 +109,22 @@ namespace Arka
                 this.Show();
             }
 
+        }
+
+        void verificar_actualizar_estado()
+        {
+            ClsLogica_Usuario Very = new ClsLogica_Usuario();
+            cedula = Very.capturarcedula(TxtUsuario.Text, TxtContrasena.Text);
+           int OK= Very.ValidarEstado(cedula);
+
+            if (OK==1)
+            {
+                MessageBox.Show("El Usuario ya esta conectado");
+            }
+            else
+            {
+                Loguear();
+            }
         }
 
 

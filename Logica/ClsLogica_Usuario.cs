@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
+using System.Windows;
 
 namespace Logica
 {
@@ -61,6 +62,31 @@ namespace Logica
         {
             return pepito.CapturarCedula(alias, clave);
 
+
+        }
+
+        public String Cambiar_Estado_usuario(String Cedu)
+        {
+            ClsDatos_Usuario X = new ClsDatos_Usuario();
+            
+            X.EStado_Usuario(Cedu);
+            return "Ok";
+        }
+        public String Cambiar_Estado_Finalizado(String Cedu)
+        {
+            ClsDatos_Usuario X = new ClsDatos_Usuario();
+
+            X.EStado_Finalizado(Cedu);
+            return "Ok";
+        }
+
+        public int ValidarEstado(String Alias)
+        {
+            int i;
+            ClsDatos_Usuario panda = new ClsDatos_Usuario();
+            i = panda.VerificarUsuario(Alias);
+
+            return i;
 
         }
     }
